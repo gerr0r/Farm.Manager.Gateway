@@ -1,0 +1,29 @@
+{
+  "name": "farm.manager.gateway",
+  "version": "1.0.0",
+  "description": "Farm Manager Gateway",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon -r dotenv/config"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerr0r/Farm.Manager.Gateway.git"
+  },
+  "author": "Gergan Ruschev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gerr0r/Farm.Manager.Gateway/issues"
+  },
+  "homepage": "https://github.com/gerr0r/Farm.Manager.Gateway#readme",
+  "dependencies": {
+    "@apollo/gateway": "^0.30.0",
+    "apollo-server": "^2.25.2",
+    "graphql": "^15.5.1"
+  },
+  "devDependencies": {
+    "dotenv": "^10.0.0",
+    "nodemon": "^2.0.7"
+  }
+}
