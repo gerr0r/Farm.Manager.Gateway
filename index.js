@@ -6,6 +6,7 @@ const { ApolloGateway, RemoteGraphQLDataSource } = require('@apollo/gateway')
 const gateway = new ApolloGateway({
     serviceList: [
         { name: 'accounts', url: 'http://localhost:4001' },
+        { name: 'locations', url: 'http://localhost:4002' },
         // Define additional services here
     ],
     buildService({ url }) {
