@@ -7,6 +7,10 @@ const gateway = new ApolloGateway({
     serviceList: [
         { name: 'accounts', url: 'http://localhost:4001' },
         { name: 'locations', url: 'http://localhost:4002' },
+        { name: 'farms', url: 'http://localhost:4003' },
+        { name: 'crops', url: 'http://localhost:4004' },
+        { name: 'machines', url: 'http://localhost:4005' },
+        { name: 'employees', url: 'http://localhost:4006' },
         // Define additional services here
     ],
     buildService({ url }) {
