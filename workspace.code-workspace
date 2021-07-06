@@ -1,0 +1,26 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "..\\Farm.Manager.Account"
+		},
+		{
+			"path": "..\\Farm.Manager.Crop"
+		},
+		{
+			"path": "..\\Farm.Manager.Employee"
+		},
+		{
+			"path": "..\\Farm.Manager.Farm"
+		},
+		{
+			"path": "..\\Farm.Manager.Location"
+		},
+		{
+			"path": "..\\Farm.Manager.Machine"
+		}
+	],
+	"settings": {}
+}
