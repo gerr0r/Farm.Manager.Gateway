@@ -7,9 +7,65 @@ services:
         environment: 
             - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
             - POSTGRES_DB=${POSTGRES_DATABASE}
-    # gateway:
-    #     build: .
-    #     ports:
-    #         - "4000:4001"
-    #     environment:
-    #         - GATEWAY_PORT=${GATEWAY_PORT}
+    account:
+        build: ../Farm.Manager.Account
+        ports:
+            - "4001:4001"
+        env_file: ..//Farm.Manager.Account/.env
+        depends_on: 
+            - database
+    location:
+        build: ../Farm.Manager.Location
+        ports:
+            - "4002:4002"
+        env_file: ..//Farm.Manager.Location/.env
+        depends_on: 
+            - database
+    farm:
+        build: ../Farm.Manager.Farm
+        ports:
+            - "4003:4003"
+        env_file: ..//Farm.Manager.Farm/.env
+        depends_on: 
+            - database
+    crop:
+        build: ../Farm.Manager.Crop
+        ports:
+            - "4004:4004"
+        env_file: ..//Farm.Manager.Crop/.env
+        depends_on: 
+            - database
+    machine:
+        build: ../Farm.Manager.Machine
+        ports:
+            - "4005:4005"
+        env_file: ..//Farm.Manager.Machine/.env
+        depends_on: 
+            - database
+    employee:
+        build: ../Farm.Manager.Employee
+        ports:
+            - "4006:4006"
+        env_file: ..//Farm.Manager.Employee/.env
+        depends_on: 
+            - database
+    gateway:
+        build: .
+        ports:
+            - "4000:4000"
+        environment:
+            - GATEWAY_PORT=${GATEWAY_PORT}
+            - MS_ACCOUNT=${MS_ACCOUNT}
+            - MS_LOCATION=${MS_LOCATION}
+            - MS_FARM=${MS_FARM}
+            - MS_CROP=${MS_CROP}
+            - MS_EMPLOYEE=${MS_EMPLOYEE}
+            - MS_MACHINE=${MS_MACHINE}
+        depends_on: 
+            - database
+            - account
+            - location
+            - farm
+            - crop
+            - machine
+            - employee
